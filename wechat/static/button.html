@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<script>
+function copyText() {
+// console.log($)
+$.ajax({
+url: "/login",
+data: {
+    key:$("#haha").val(),
+    value:$("#xixi").val()
+},
+
+success: function (result) {
+console.log($("#txt"))
+    $("#txt").html(result);
+}
+});
+
+}
+
+function findText() {
+// console.log($)
+$.ajax({
+url: "/find",
+data: {
+    findkey:$("#heihei").val(),
+},
+
+success: function (result) {
+console.log($("#txt"))
+    // $("#txt").html(JSON.stringify(result));
+    $("#txt").html(result);
+}
+});
+
+}
+
+</script>
+</head>
+
+<div id="txt"></div>
+
+<!--<button onclick="copyText()">click</button>-->
+<input id="haha">请输入key</input>
+<br>
+<input id="xixi">请输入value</input>
+<button onclick="copyText()">click</button>
+
+<p>---------------------------------------------------------</p>
+<input id="heihei">请要查找的key</input>
+<button onclick="findText()">click</button>
+
+</body>
+
+</html>
