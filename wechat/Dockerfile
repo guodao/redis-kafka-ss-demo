@@ -4,7 +4,7 @@ FROM ubuntu:16.04
 MAINTAINER chenhong41@huawei.com
 
 #添加目录
-ADD ./wechat /root/
+ADD . /root/
 
 #调整工作目录
 WORKDIR /root/
